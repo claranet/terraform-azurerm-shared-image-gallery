@@ -13,7 +13,7 @@ output "name" {
   value       = azurerm_shared_image_gallery.shared_image_gallery.name
 }
 
-output "identity_principal_id" {
-  description = "Azure Shared Image Gallery system identity principal ID"
-  value       = try(azurerm_shared_image_gallery.shared_image_gallery.identity[0].principal_id, null)
+output "shared_images_definitions" {
+  description = "Azure Shared Images definitions"
+  value       = azurerm_shared_image.shared_image
 }

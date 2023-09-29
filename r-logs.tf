@@ -1,6 +1,6 @@
 module "diagnostics" {
-  source = "claranet/diagnostic-settings/azurerm"
-  # version = "~> 6.5.0"
+  source  = "claranet/diagnostic-settings/azurerm"
+  version = "~> 6.5.0"
 
   resource_id = azurerm_shared_image_gallery.shared_image_gallery.id
 

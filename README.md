@@ -93,12 +93,13 @@ module "shared_image_gallery" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| diagnostics | claranet/diagnostic-settings/azurerm | n/a |
+| diagnostics | claranet/diagnostic-settings/azurerm | ~> 6.5.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
+| [azurerm_shared_image.shared_image](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/shared_image) | resource |
 | [azurerm_shared_image_gallery.shared_image_gallery](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/shared_image_gallery) | resource |
 | [azurecaf_name.shared_image_gallery](https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/data-sources/name) | data source |
 
@@ -106,9 +107,8 @@ module "shared_image_gallery" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| allowed\_cidrs | List of allowed CIDR ranges to access the Azure Shared Image Gallery resource. | `list(string)` | `[]` | no |
-| allowed\_subnet\_ids | List of allowed subnets IDs to access the Azure Shared Image Gallery resource. | `list(string)` | `[]` | no |
 | client\_name | Client name/account used in naming. | `string` | n/a | yes |
+| community\_gallery | Configure the Shared Image Gallery as a Community Gallery. | <pre>object({<br>    eula            = string<br>    prefix          = string<br>    publisher_email = string<br>    publisher_uri   = string<br>  })</pre> | `null` | no |
 | custom\_diagnostic\_settings\_name | Custom name of the diagnostics settings, name will be 'default' if not set. | `string` | `"default"` | no |
 | custom\_name | Custom Azure Shared Image Gallery, generated if not set | `string` | `""` | no |
 | default\_tags\_enabled | Option to enable or disable default tags. | `bool` | `true` | no |
@@ -121,9 +121,9 @@ module "shared_image_gallery" {
 | logs\_metrics\_categories | Metrics categories to send to destinations. | `list(string)` | `null` | no |
 | name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
 | name\_suffix | Optional suffix for the generated name | `string` | `""` | no |
-| network\_bypass | Specify whether traffic is bypassed for 'Logging', 'Metrics', 'AzureServices' or 'None'. | `list(string)` | <pre>[<br>  "Logging",<br>  "Metrics",<br>  "AzureServices"<br>]</pre> | no |
-| public\_network\_access\_enabled | Whether the Azure Shared Image Gallery is available from public network. | `bool` | `false` | no |
 | resource\_group\_name | Name of the resource group. | `string` | n/a | yes |
+| shared\_image\_gallery\_description | A description for this Shared Image Gallery. | `string` | `null` | no |
+| shared\_images\_definitions | Create Shared Image Definition. | <pre>list(object({<br>    name = string<br>    identifier = object({<br>      offer     = string<br>      publisher = string<br>      sku       = string<br>    })<br>    os_type                             = string<br>    description                         = optional(string)<br>    disk_types_not_allowed              = optional(list(string))<br>    end_of_life_date                    = optional(string)<br>    eula                                = optional(string)<br>    specialized                         = optional(bool)<br>    architecture                        = optional(string, "x64")<br>    hyper_v_generation                  = optional(string, "V1")<br>    max_recommended_vcpu_count          = optional(number)<br>    min_recommended_vcpu_count          = optional(number)<br>    max_recommended_memory_in_gb        = optional(number)<br>    min_recommended_memory_in_gb        = optional(number)<br>    privacy_statement_uri               = optional(string)<br>    release_note_uri                    = optional(string)<br>    trusted_launch_enabled              = optional(bool)<br>    confidential_vm_supported           = optional(bool)<br>    confidential_vm_enabled             = optional(bool)<br>    accelerated_network_support_enabled = optional(bool)<br>    tags                                = optional(map(string))<br>  }))</pre> | `[]` | no |
 | stack | Project stack name. | `string` | n/a | yes |
 
 ## Outputs
@@ -131,9 +131,9 @@ module "shared_image_gallery" {
 | Name | Description |
 |------|-------------|
 | id | Azure Shared Image Gallery ID |
-| identity\_principal\_id | Azure Shared Image Gallery system identity principal ID |
 | name | Azure Shared Image Gallery name |
 | shared\_image\_gallery | Azure Shared Image Gallery output object |
+| shared\_images\_definitions | Azure Shared Images definitions |
 <!-- END_TF_DOCS -->
 
 ## Related documentation
