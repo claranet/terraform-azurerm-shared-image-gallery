@@ -71,11 +71,29 @@ module "shared_image_gallery" {
   environment = var.environment
   stack       = var.stack
 
-  logs_destinations_ids = [
-    module.run.logs_storage_account_id,
-    module.run.log_analytics_workspace_id
-  ]
+  shared_images_definitions = [
+    {
+      name = "Debian11"
+      identifier = {
+        offer     = "Debian"
+        publisher = "Claranet"
+        sku       = "11"
+      }
+      os_type     = "Linux"
+      description = "Claranet's Debian 11 custom image."
+    },
+    {
+      name = "Debian12"
+      identifier = {
+        offer     = "Debian"
+        publisher = "Claranet"
+        sku       = "12"
+      }
+      os_type     = "Linux"
+      description = "Claranet's Debian 12 custom image."
+    },
 
+  ]
   extra_tags = {
     foo = "bar"
   }
