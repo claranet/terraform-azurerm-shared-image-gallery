@@ -1,5 +1,5 @@
-resource "azurerm_shared_image_gallery" "shared_image_gallery" {
-  name = local.shared_image_gallery_name
+resource "azurerm_shared_image_gallery" "main" {
+  name = local.name
 
   location            = var.location
   resource_group_name = var.resource_group_name
@@ -20,4 +20,9 @@ resource "azurerm_shared_image_gallery" "shared_image_gallery" {
   }
 
   tags = merge(local.default_tags, var.extra_tags)
+}
+
+moved {
+  from = azurerm_shared_image_gallery.shared_image_gallery
+  to   = azurerm_shared_image_gallery.main
 }

@@ -1,7 +1,7 @@
-resource "azurerm_shared_image" "shared_image" {
+resource "azurerm_shared_image" "main" {
   for_each            = { for x in var.shared_images_definitions : x.name => x }
   name                = each.value.name
-  gallery_name        = azurerm_shared_image_gallery.shared_image_gallery.name
+  gallery_name        = azurerm_shared_image_gallery.main.name
   resource_group_name = var.resource_group_name
   location            = var.location
 
@@ -29,7 +29,8 @@ resource "azurerm_shared_image" "shared_image" {
   privacy_statement_uri = each.value.privacy_statement_uri
   release_note_uri      = each.value.release_note_uri
 
-  trusted_launch_enabled = each.value.trusted_launch_enabled
+  trusted_launch_enabled   = each.value.trusted_launch_enabled
+  trusted_launch_supported = each.value.trusted_launch_supported
 
   confidential_vm_supported = each.value.confidential_vm_supported
   confidential_vm_enabled   = each.value.confidential_vm_enabled
@@ -37,5 +38,9 @@ resource "azurerm_shared_image" "shared_image" {
   accelerated_network_support_enabled = each.value.accelerated_network_support_enabled
 
   tags = each.value.tags
+}
 
+moved {
+  from = azurerm_shared_image.shared_image
+  to   = azurerm_shared_image.main
 }
