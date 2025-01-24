@@ -39,6 +39,7 @@ variable "shared_images_definitions" {
     privacy_statement_uri               = optional(string)
     release_note_uri                    = optional(string)
     trusted_launch_enabled              = optional(bool)
+    trusted_launch_supported            = optional(bool)
     confidential_vm_supported           = optional(bool)
     confidential_vm_enabled             = optional(bool)
     accelerated_network_support_enabled = optional(bool)

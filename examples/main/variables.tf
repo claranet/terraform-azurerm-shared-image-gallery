@@ -17,3 +17,8 @@ variable "stack" {
   description = "Project stack name."
   type        = string
 }
+
+variable "subscription_id" {
+  description = "Subscription ID."
+  type        = string
+}
