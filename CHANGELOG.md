@@ -1,3 +1,40 @@
+## 8.0.0 (2025-01-24)
+
+### ⚠ BREAKING CHANGES
+
+* **AZ-1088:** AzureRM Provider v4+ and OpenTofu 1.8+
+
+### Features
+
+* **AZ-1088:** module v8 structure and updates 834f026
+
+### Miscellaneous Chores
+
+* **deps:** update dependency opentofu to v1.8.3 89845c4
+* **deps:** update dependency opentofu to v1.8.4 446d749
+* **deps:** update dependency opentofu to v1.8.6 d985dae
+* **deps:** update dependency opentofu to v1.8.8 9912fc5
+* **deps:** update dependency opentofu to v1.9.0 4a8c9ad
+* **deps:** update dependency pre-commit to v4 c5f48d8
+* **deps:** update dependency pre-commit to v4.0.1 5fa4426
+* **deps:** update dependency pre-commit to v4.1.0 d41c873
+* **deps:** update dependency tflint to v0.54.0 ec57642
+* **deps:** update dependency tflint to v0.55.0 6b3e166
+* **deps:** update dependency trivy to v0.56.1 1ea43cd
+* **deps:** update dependency trivy to v0.56.2 68d5144
+* **deps:** update dependency trivy to v0.57.1 a437d86
+* **deps:** update dependency trivy to v0.58.1 2d66494
+* **deps:** update dependency trivy to v0.58.2 d2e1362
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.19.0 0995e88
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.20.0 f9389f9
+* **deps:** update pre-commit hook pre-commit/pre-commit-hooks to v5 ccd4ebb
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.1.0 6377ad1
+* **deps:** update tools 692b2c6
+* **deps:** update tools 6dd0692
+* prepare for new examples structure c10c4ee
+* update examples structure e494cde
+* update tflint config for v0.55.0 6180b06
+
 ## 7.1.0 (2024-10-03)
 
 ### Features
