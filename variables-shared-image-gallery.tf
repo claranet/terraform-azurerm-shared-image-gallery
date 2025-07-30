@@ -43,6 +43,7 @@ variable "shared_images_definitions" {
     confidential_vm_supported           = optional(bool)
     confidential_vm_enabled             = optional(bool)
     accelerated_network_support_enabled = optional(bool)
+    disk_controller_type_nvme_enabled   = optional(bool)
     tags                                = optional(map(string))
   }))
   default = []
