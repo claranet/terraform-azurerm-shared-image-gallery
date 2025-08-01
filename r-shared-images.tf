@@ -37,6 +37,8 @@ resource "azurerm_shared_image" "main" {
 
   accelerated_network_support_enabled = each.value.accelerated_network_support_enabled
 
+  disk_controller_type_nvme_enabled = each.value.disk_controller_type_nvme_enabled
+
   tags = each.value.tags
 }
 
