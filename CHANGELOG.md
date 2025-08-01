@@ -1,3 +1,39 @@
+## 8.1.0 (2025-08-01)
+
+### Features
+
+* add disk_controller_type_nvme_enabled parameter for shared images e88da5f
+
+### Miscellaneous Chores
+
+* **⚙️:** ✏️ update template identifier for MR review 9480a8c
+* 🗑️ remove old commitlint configuration files f5e3065
+* **deps:** update dependency opentofu to v1.10.0 14ccb68
+* **deps:** update dependency opentofu to v1.10.1 8dadd40
+* **deps:** update dependency opentofu to v1.10.3 e0b6f19
+* **deps:** update dependency opentofu to v1.9.1 f9eadb2
+* **deps:** update dependency pre-commit to v4.2.0 7cb3045
+* **deps:** update dependency terraform-docs to v0.20.0 95c2b3e
+* **deps:** update dependency tflint to v0.55.1 8c31fa8
+* **deps:** update dependency tflint to v0.57.0 c37f0d1
+* **deps:** update dependency tflint to v0.58.0 8e43b4b
+* **deps:** update dependency tflint to v0.58.1 4ff1c2b
+* **deps:** update dependency trivy to v0.59.0 64c8d6c
+* **deps:** update dependency trivy to v0.59.1 4495887
+* **deps:** update dependency trivy to v0.60.0 18890fe
+* **deps:** update dependency trivy to v0.61.1 62135fd
+* **deps:** update dependency trivy to v0.62.0 c754e6f
+* **deps:** update dependency trivy to v0.62.1 bcc4d21
+* **deps:** update dependency trivy to v0.63.0 52783a4
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.21.0 1b8531c
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.22.0 cab2619
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.0 2ac8308
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.1 a7a2b14
+* **deps:** update tools 34e62fc
+* **deps:** update tools 6947193
+* **deps:** update tools 8326015
+* update Github templates d886406
+
 ## 8.0.0 (2025-01-24)
 
 ### ⚠ BREAKING CHANGES
