@@ -1,6 +1,7 @@
 output "resource" {
   description = "Azure Shared Image Gallery output object."
   value       = azurerm_shared_image_gallery.main
+  sensitive   = true
 }
 
 output "id" {
